@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-<link rel="stylesheet" type ="text/css" href="style.css">
+    <!-- <link rel="stylesheet" type ="text/css" href="style.css"> -->
 
 
 <script>
@@ -31,6 +31,16 @@ Crea una funcion llamada: challenge1  que realice lo siguiente:
 
 // CREA TU FUNCION challenge1 aqui 
 
+function challenge1(){
+    const btnNumbers = prompt("¿Cuantos botones necesitas?");
+    for(let i=1; i<=btnNumbers; i++){
+        const dummy = document.getElementById("dummy");
+        const btn = document.createElement("button");
+        btn.innerText = nombres[i-1];
+        dummy.appendChild(btn);
+    }
+}
+
 
 
 // ************** PARTE 2    **************
@@ -41,6 +51,12 @@ Crea una funcion llamada: challenge2 que utilizando un FOR convierta todos los n
 **/
 
 // CREA TU FUNCION challenge2 2 aquí.
+
+function challenge2(){
+    for(let e=0; e<nombres.length; e++){
+        console.log(nombres[e].toUpperCase());
+    }
+}
 
 
 
@@ -68,9 +84,28 @@ Invoca la función para validar su funcionalidad.
 
 */
 
+function Dog(name, color, race) {
+    this.name = name;
+    this.color = color; 
+    this.race = race;
+    this.printInfo = function(){
+        console.log(`Nombre: ${this.name} , De color: ${this.color} , Raza: ${this.race}`)
+    };
+}
 
+function challenge3(){
+    const d1 = new Dog("Canela", "cafe claro", "snause");
+    const d2 = new Dog("Pepper", "tricolor", "beagle");
+    const d3 = new Dog("Magnus", "cafe obscuro", "husky");
 
+    console.log(d1);
+    console.log(d2);
+    console.log(d3);
 
+    d1.printInfo();
+    d2.printInfo();
+    d3.printInfo();
+}
 
 </script>
 
@@ -80,7 +115,7 @@ Invoca la función para validar su funcionalidad.
 
     <button onclick="challenge1()">Challenge 1</button>
     <button onclick="challenge2()">Challenge 2</button>
-    <button onclick="challenge3()">Challenge 2</button>
+    <button onclick="challenge3()">Challenge 3</button>
 
   
 <div id = "dummy">
